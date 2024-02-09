@@ -1,20 +1,34 @@
 body {
+  height: 100vh;
   text-align: center;
   background-color: #011F3F;
+  margin: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+
+  .btn {
+    height: 80px;
+    width: 80px;
+  }
 }
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  margin:  5%;
+  margin-bottom:  5%;
   color: #FEF2BF;
 }
 
 .container {
   display: block;
-  width: 50%;
+  width: 100%;
+  max-width: 600px;
   margin: auto;
-
 }
 
 .btn {
@@ -50,6 +64,10 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+.high-scores{
+  display: none;
 }
 
 #username-input-container {

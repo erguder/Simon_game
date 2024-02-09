@@ -11,12 +11,6 @@ const getLocalHighScores = async () => {
   console.log('Local High Scores:', data);
 };
 
-const getGlobalHighScores = async () => {
-  const response = await fetch('http://localhost:3000/global-high-scores');
-  const data = await response.json();
-  console.log('Global High Scores:', data);
-};
-
 const updateScoresUI = (containerId, scores) => {
   const container = document.getElementById(containerId);
   // container.innerHTML = ''; // Comment out or remove this line to keep previous scores
@@ -30,16 +24,6 @@ const updateScoresUI = (containerId, scores) => {
 
 const saveLocalScore = async (username, score) => {
   await fetch('http://localhost:3000/local-high-scores', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, score }),
-  });
-};
-
-const saveGlobalScore = async (username, score) => {
-  await fetch('http://localhost:3000/global-high-scores', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
